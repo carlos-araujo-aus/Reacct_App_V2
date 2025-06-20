@@ -9,6 +9,8 @@ import Button from './components/button'
 import StaticComponent from './components/staticComponent'
 import UserList from './components/userList'
 import UserListWithLoading from './components/userListWithLoading'
+import SearchPost from './components/searchPost'
+
 
 function App() {
 
@@ -44,6 +46,8 @@ function App() {
         <UserList />
 
         <UserListWithLoading />     
+
+        <SearchPost />
 
 
       </div>
