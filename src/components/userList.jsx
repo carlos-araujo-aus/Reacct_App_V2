@@ -13,11 +13,12 @@ const UserList = () => {
 
     return (
         <>
-            <h2>User List With Fetch</h2>
+            <h2>Dinamic Component With Fetch</h2>
             <ul>
-                {users.map((user) => (
-                    <li key={user.id}>{user.name}</li>
-                ))}
+                {
+                users.map((user) => (
+                    <li key={user.id}>{user.name} - {user.email}</li>))
+                }
             </ul>
         </>
     )

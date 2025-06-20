@@ -8,6 +8,7 @@ import CounterWithEffect from './components/counterWithEffect'
 import Button from './components/button'
 import StaticComponent from './components/staticComponent'
 import UserList from './components/userList'
+import UserListWithLoading from './components/userListWithLoading'
 
 function App() {
 
@@ -41,7 +42,8 @@ function App() {
         <StaticComponent />
 
         <UserList />
-        
+
+        <UserListWithLoading />     
 
 
       </div>
