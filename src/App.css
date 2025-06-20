@@ -1,42 +1,451 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+/* ===== VARIABLES CSS ===== */
+:root {
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+  --accent-color: #f093fb;
+  --success-color: #4facfe;
+  --warning-color: #43e97b;
+  --danger-color: #fa709a;
+  --dark-color: #2d3748;
+  --light-color: #f7fafc;
+  --white: #ffffff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+/* ===== RESET Y BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
   padding: 2rem;
+  color: var(--dark-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+.app-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  backdrop-filter: blur(10px);
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* ===== TÍTULOS ===== */
+h1 {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes logo-spin {
+h2 {
+  color: var(--dark-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  position: relative;
+  text-align: center;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: 2px;
+}
+
+/* ===== COMPONENTE CARD ===== */
+.card-item {
+  background: linear-gradient(135deg, var(--white) 0%, #f8fafc 100%);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin: 1rem auto;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  max-width: 600px;
+  text-align: center;
+}
+
+.card-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.card-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-item h2 {
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.card-item p {
+  color: #64748b;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ===== LISTA DE ITEMS ===== */
+ul {
+  list-style: none;
+  margin: 1rem auto;
+  max-width: 400px;
+  text-align: center;
+}
+
+li {
+  background: linear-gradient(135deg, var(--light-color) 0%, var(--white) 100%);
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  max-width: 300px;
+  text-align: center;
+}
+
+li::before {
+  content: '✨';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+li:hover::before {
+  opacity: 1;
+}
+
+/* ===== COMPONENTE COUNTER ===== */
+.counter-container {
+  background: linear-gradient(135deg, var(--success-color) 0%, var(--warning-color) 100%);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin: 2rem auto;
+  text-align: center;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  max-width: 500px;
+}
+
+.counter-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.counter-button {
+  background: linear-gradient(135deg, var(--white) 0%, #f1f5f9 100%);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.counter-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: var(--transition);
+}
+
+.counter-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: var(--success-color);
+}
+
+.counter-button:hover::before {
+  left: 100%;
+}
+
+.counter-button:active {
+  transform: translateY(0);
+}
+
+/* ===== COMPONENTE TOGGLE BUTTON ===== */
+.toggle-container {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--danger-color) 100%);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin: 2rem auto;
+  text-align: center;
+  box-shadow: var(--shadow);
+  max-width: 400px;
+}
+
+.toggle-button {
+  background: linear-gradient(135deg, var(--white) 0%, #f1f5f9 100%);
+  border: 2px solid transparent;
+  border-radius: 25px;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.toggle-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent-color);
+}
+
+.toggle-button:active {
+  transform: scale(0.95);
+}
+
+/* ===== COMPONENTE NAME FORM ===== */
+.form-container {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin: 2rem auto;
+  text-align: center;
+  box-shadow: var(--shadow);
+  max-width: 450px;
+}
+
+.name-input {
+  background: var(--white);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 300px;
+  margin: 1rem auto;
+  transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.name-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.name-input::placeholder {
+  color: #94a3b8;
+}
+
+.form-container p {
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* ===== COMPONENTE COUNTER WITH EFFECT ===== */
+.counter-effect-container {
+  background: linear-gradient(135deg, var(--warning-color) 0%, var(--success-color) 100%);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin: 2rem auto;
+  text-align: center;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  max-width: 400px;
+}
+
+.counter-button-effect {
+  background: linear-gradient(135deg, var(--white) 0%, #f1f5f9 100%);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.counter-button-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: var(--transition);
+}
+
+.counter-button-effect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: var(--warning-color);
+}
+
+.counter-button-effect:hover::before {
+  left: 100%;
+}
+
+.counter-button-effect:active {
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  
+  .app-container {
+    padding: 1rem;
+    margin: 0;
+    border-radius: 0;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.25rem;
+  }
+  
+  .counter-button,
+  .toggle-button,
+  .counter-button-effect {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .card-item,
+  .counter-container,
+  .toggle-container,
+  .form-container,
+  .counter-effect-container {
+    margin: 1rem 0;
+    max-width: 100%;
+  }
+}
+
+/* ===== ANIMACIONES ADICIONALES ===== */
+@keyframes fadeInUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.card-item,
+.counter-container,
+.toggle-container,
+.form-container,
+.counter-effect-container {
+  animation: fadeInUp 0.6s ease-out;
 }
 
-.card {
-  padding: 2em;
+/* ===== ESTADOS DE CARGA ===== */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
 }
 
-.read-the-docs {
-  color: #888;
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
 }

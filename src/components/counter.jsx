@@ -11,15 +11,15 @@ const Counter = () => {
         <>
             <h2>The counter is set to {count}</h2>
             
-            <button 
+            <button  className="counter-button"
                 onClick={() => {setCount(count + 1); 
                 setTotalCounter(totalCounter + 1)}}>
                     Increment
             </button>
             
-            <button 
+            <button  className="counter-button"
                 onClick={() => {setCount(count - 1); 
-                setTotalCounter(totalCounter - 1)}}>
+                setTotalCounter(totalCounter + 1)}}>
                     Decrement
             </button>
             

@@ -4,6 +4,8 @@ import Card from './components/cards'
 import Counter from './components/counter'
 import ToggleButton from './components/toggleButton'
 import NameForm from './components/nameForm'
+import CounterWithEffect from './components/counterWithEffect'
+
 
 function App() {
 
@@ -27,6 +29,8 @@ function App() {
         <ToggleButton />
 
         <NameForm />
+
+        <CounterWithEffect />
 
       </div>
       
