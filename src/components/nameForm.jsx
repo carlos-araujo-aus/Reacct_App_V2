@@ -5,7 +5,8 @@ const NameForm = () => {
 
     return (
         <>
-            <input
+            <h2>Name Form</h2>
+            <input className="name-input"
                 type="text"
                 placeholder="Enter your name"
                 value={name}
