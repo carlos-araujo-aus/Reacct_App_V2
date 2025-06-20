@@ -5,6 +5,7 @@ import Counter from './components/counter'
 import ToggleButton from './components/toggleButton'
 import NameForm from './components/nameForm'
 import CounterWithEffect from './components/counterWithEffect'
+import Button from './components/button'
 
 
 function App() {
@@ -30,7 +31,12 @@ function App() {
 
         <NameForm />
 
-        <CounterWithEffect />
+        <CounterWithEffect /><br />
+        
+        <h2>Button with styled components</h2> <br />
+        <Button><p>Grey</p></Button>
+        <Button blue><p>Blue</p></Button> <br />
+
 
       </div>
       

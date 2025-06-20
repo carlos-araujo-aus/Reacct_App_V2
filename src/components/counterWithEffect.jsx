@@ -9,6 +9,7 @@ const CounterWithEffect = () => {
 
     return (
         <>
+            <h2>Counter with useEffect</h2>
             <h2>The counter is set to {count}</h2>
             <button className="counter-button-effect" onClick={() => setCount(count + 1)}>Increment</button>
         </>
