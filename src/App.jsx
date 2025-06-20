@@ -10,6 +10,7 @@ import StaticComponent from './components/staticComponent'
 import UserList from './components/userList'
 import UserListWithLoading from './components/userListWithLoading'
 import SearchPost from './components/searchPost'
+import CounterWithUseReducer from './components/counterWithUseReducer'
 
 
 function App() {
@@ -48,6 +49,8 @@ function App() {
         <UserListWithLoading />     
 
         <SearchPost />
+
+        <CounterWithUseReducer />
 
 
       </div>
