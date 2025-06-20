@@ -6,7 +6,8 @@ import ToggleButton from './components/toggleButton'
 import NameForm from './components/nameForm'
 import CounterWithEffect from './components/counterWithEffect'
 import Button from './components/button'
-
+import StaticComponent from './components/staticComponent'
+import UserList from './components/userList'
 
 function App() {
 
@@ -36,6 +37,11 @@ function App() {
         <h2>Button with styled components</h2> <br />
         <Button><p>Grey</p></Button>
         <Button blue><p>Blue</p></Button> <br />
+
+        <StaticComponent />
+
+        <UserList />
+        
 
 
       </div>
